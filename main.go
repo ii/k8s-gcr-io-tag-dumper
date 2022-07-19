@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/csv"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -22,6 +23,8 @@ import (
 
 func main() {
 	ctx := context.Background()
+	flag.StringVar(&outputFile, "o", "/tmp/k8s-gcr-io-tag-dumper-data.txt", "The location to output the CSV file to")
+	flag.Parse()
 
 	if err := run(ctx); err != nil {
 		klog.Fatalf("unexpected error: %v", err)
@@ -29,6 +32,7 @@ func main() {
 }
 
 var remoteOptions []remote.Option
+var outputFile string
 
 func run(ctx context.Context) error {
 	root := "k8s.gcr.io"
@@ -139,7 +143,7 @@ func dump(repo name.Repository, tags *google.Tags, err error) error {
 		}
 	}
 
-	f, e := os.OpenFile("/tmp/k8s-gcr-io-tag-dumper-data.txt", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
+	f, e := os.OpenFile(outputFile, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	if e != nil {
 		fmt.Println(e)
 	}
