@@ -1,0 +1,5 @@
+#+TITLE: k8s-gcr-io-tag-dumper
+
+Credits: JustinSB https://github.com/kubernetes/k8s.io/pull/2043
+
+Adapted to produce CSV
