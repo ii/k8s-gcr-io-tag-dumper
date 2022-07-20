@@ -48,4 +48,4 @@ jobs:
           git commit -s -m "update k8s.gcr.io dump for ${TIMESTAMP}"
           git push origin "${NEW_BRANCH}"
           gh pr create --title "Update k8s.gcr.io dump ${TIMESTAMP}" --body "updates to k8s.gcr.io dump for ${TIMESTAMP}"
-          gh pr merge "${NEW_BRANCH}"
+          gh pr merge --merge "${NEW_BRANCH}"
