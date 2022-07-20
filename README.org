@@ -3,3 +3,8 @@
 Credits: JustinSB https://github.com/kubernetes/k8s.io/pull/2043
 
 Adapted to produce CSV
+
+This job's data will be consumed in https://github.com/kubernetes/k8s.io/tree/main/images/public-log-asn-matcher.
+
+# TODO
+- migrate to k8s-infra Prow (?)
