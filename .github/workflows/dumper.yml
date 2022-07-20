@@ -30,7 +30,7 @@ jobs:
           if [ -f ./data/k8s-gcr-io.csv ]; then
             # merge existing
             cat ./data/k8s-gcr-io.csv ./data/k8s-gcr-io.csv.tmp \
-              | sort | uniq | cat > ./data/k8s-gcr-io.csv.tmp
+              | sort | uniq | cat > ./data/k8s-gcr-io.csv
           fi
           mv ./data/k8s-gcr-io.csv{.tmp,}
       - name: commit and push if there are changes
