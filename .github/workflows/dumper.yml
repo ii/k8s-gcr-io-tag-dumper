@@ -3,7 +3,12 @@ name: dumper
 on:
   schedule:
     - cron: "0 12 * * 6"
-  push: {}
+  push:
+    paths:
+      - main.go
+      - go.mod
+      - go.sum
+      - .github/workflows/dumper.yml
 
 jobs:
   dumper:
