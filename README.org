@@ -1,3 +1,5 @@
+#+html: <a href=https://github.com/ii/k8s-gcr-io-tag-dumper/actions/workflows/dumper.yml><img src=https://github.com/ii/k8s-gcr-io-tag-dumper/actions/workflows/dumper.yml/badge.svg /></a>
+
 #+TITLE: k8s-gcr-io-tag-dumper
 
 Credits: JustinSB https://github.com/kubernetes/k8s.io/pull/2043
